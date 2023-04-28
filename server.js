@@ -2,11 +2,18 @@
 //step1 - importing required modules
 const express = require("express");
 const myModule = require("./myModule");
-const moment = require("moment");
+
+const moment = require("moment");   //for getting date,time efficiently
+
+const helmet = require("helmet");   //Helmet helps you secure your Express apps by setting various HTTP headers.
+
+const cors = require("cors");   //cors module is used to prevent content security policy error.
 
 //step2 - basic snippets/configs
 const app = express();
 const port = 7000;
+app.use(helmet());  //uses helmet, which sends additional security headers
+app.use(cors());    //Enable All CORS Requests
 
 //step3 - any call to server is get request, so response for get request-
 app.get("/", (req, res) => {
