@@ -19,3 +19,21 @@
 // Mongoose - mongodb asynchronous tool.
 // Jest - javascript testing framework.
 // chalk - console/termial string styling.
+
+//including a module-
+const { log } = require("console");
+const os = require("os");
+//now we have access to os modules, now we can use it.
+console.log(os.platform());
+// console.log(os.cpus());
+// console.log(os.machine());
+// console.log(os.totalmem());
+// console.log(os.version());
+
+//create you own module-
+//in file "myModule" a there is module that gives info about os.
+//using that module here-
+
+const myModule = require("./myModule")
+myModule.osInfo();
+//works the same.
