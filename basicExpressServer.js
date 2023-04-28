@@ -1,5 +1,5 @@
 
-// Express is the most popular Node web framework, and is the underlying library for a number of other popular Node web frameworks. It provides mechanisms to:
+// Express is the most popular Node web framework/say MODULE, and is the underlying library for a number of other popular Node web frameworks. It provides mechanisms to:
 
 // Write handlers for requests with different HTTP verbs at different URL paths (routes).
 // Integrate with "view" rendering engines in order to generate responses by inserting data into templates.
@@ -14,7 +14,25 @@ const port = 4000;     //application port
 
 //creating a get request
 app.get("/", function (req, res) {
-    res.send("welcome", { "name": "ashu" });
+
+    //basic/old way of sending data
+    //res.send("welcome", { "name": "ashu" });
+
+    //sending the http response tool
+    //res.status(200);  
+
+    //sending the json body
+    //res.json({ "name": "ashutosh" });
+
+    //make user download a file
+    //res.download("server.js");
+
+    //response can be combined
+    //res.status(200).download("server.js");
+
+    //getting ip.method of user
+    console.log("Request IP: " + req.ip);
+    console.log("Request Method: " + req.method);
 });
 
 //listening to port for connections
