@@ -33,6 +33,9 @@ app.get("/", function (req, res) {
     //getting ip.method of user
     console.log("Request IP: " + req.ip);
     console.log("Request Method: " + req.method);
+
+    //getting the url of the request
+    console.log("url= " + req.query);
 });
 
 //listening to port for connections
