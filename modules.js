@@ -35,5 +35,5 @@ console.log(os.platform());
 //using that module here-
 
 const myModule = require("./myModule")
-myModule.osInfo();
+console.log(myModule.osInfo());
 //works the same.

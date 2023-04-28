@@ -6,21 +6,16 @@ const machine = os.machine();
 const memory = os.totalmem();
 const version = os.version();
 
-OSInfo = () => {
-    console.log(
-        {
-            "Information_About_your_OS": "",
-            "Platform": `${platform}`,
-            "Machine": `${machine}`,
-            "Memory": `${memory}`,
-            "Version": `${version}`
-        }
-    )
+OSInfo = {
+    "Information_About_your_OS": "",
+    "Platform": `${platform}`,
+    "Machine": `${machine}`,
+    "Memory": `${memory}`,
+    "Version": `${version}`
 };
 
-
-//OSInfo();
+//console.log(OSInfo);
 
 exports.osInfo = () => {
-    return OSInfo();
+    return OSInfo;
 }
