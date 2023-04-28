@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ashutosh7i/Learning_Javascript#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "moment": "^2.29.4",
     "nodemon": "^2.0.22"
   }
 }
