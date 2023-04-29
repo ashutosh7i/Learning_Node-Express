@@ -15,6 +15,16 @@ const port = 7000;
 app.use(helmet());  //uses helmet, which sends additional security headers
 app.use(cors());    //Enable All CORS Requests
 
+
+// app.use(express.static('./public'))
+
+// Middleware function to log requests
+// app.use((req, res) => {
+//     console.log(`Received ${req.method} request for ${req.url} from ip ${req.ip}`);
+// });
+
+
+
 //step3 - any call to server is get request, so response for get request-
 app.get("/", (req, res) => {
     //when user visits the page on / root, send response-
@@ -22,6 +32,7 @@ app.get("/", (req, res) => {
     let date = moment().format('MMMM Do YYYY, h:mm:ss a');
     //response-
     res.status(200).send(`<h1>Go to /osinfo endpoint <h1/> <h2>${date}<h2/>`);
+    //console.log(req.headers);
 });
 
 //routes- multiple endpoints can be handles using a single server
@@ -29,6 +40,15 @@ app.get("/osinfo", (req, res) => {
     //when user visits the page on /osInfo, send response-
     res.status(200).json(myModule.osInfo());
 });
+
+app.get("/ashutosh", (req, res) => {
+    res.redirect("https://github.com/ashutosh7i")
+})
+
+app.post('/submit-form', (req, res) => {
+    console.log(req.body.username);
+    res.end()
+})
 
 //step4 - listen on the port for connection-
 app.listen(port, () => {
